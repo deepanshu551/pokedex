@@ -1,0 +1,49 @@
+@import "../../styles//typography";
+
+.poke{
+    &-card{
+
+        &-container{
+            
+            cursor: pointer;
+            width: 149px;
+            height: 227px;
+            border: 2px dashed #2E3156;
+            position: relative;
+            border-radius: 2px;
+            @media screen and (min-width: 720px) {
+                width: 194px;
+                height: 277px;
+            }
+
+        }
+        &-image{
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            top: 41px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        &-desc{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: 19px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            span{
+                color: #2E3156;
+
+            }
+            .heading_light{
+                font-weight: 400;
+
+            }
+        }
+    }
+
+}

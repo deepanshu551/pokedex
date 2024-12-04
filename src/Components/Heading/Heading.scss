@@ -1,0 +1,32 @@
+.poke-home {
+    &-heading {
+      display: flex;
+      justify-content: start;
+      align-items: start;
+      flex-direction: column;
+      @media screen and (min-width: 720px) {
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+      }
+  
+      &-title {
+        color: #2e3156;
+      }
+      &-desc {
+        color: #5d5f7e;
+      }
+  
+      &-divider {
+        width: 100%;
+        border: 1px solid #5d5f7e;
+        margin: 12px 0 10px 0;
+        @media screen and (min-width: 720px) {
+          width: 0;
+          margin: 0 30px;
+          height: 53px;
+          border: 1px solid #5d5f7e;
+        }
+      }
+    }
+}

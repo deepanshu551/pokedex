@@ -1,0 +1,15 @@
+.poke{
+    &-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 31px;
+        row-gap: 35px;
+        @media screen and (min-width: 720px) {
+            margin-top: 41px;
+            
+        }
+       
+    }
+
+}

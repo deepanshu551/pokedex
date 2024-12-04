@@ -1,0 +1,57 @@
+.poke-home {
+  
+    &-tools {
+      margin-top: 27px;
+      display: flex;
+      gap: 42px;
+  
+     div{
+        width:100%;
+        z-index: 200;
+     }
+
+      &-mob{
+        display: flex;
+        gap: 42px;
+        display: none;
+        @media screen and (min-width: 720px) {
+            display: flex;
+            
+        }
+      }
+      &-input {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        button{
+            position: absolute;
+            top: 65%;
+            right: 23px;
+            transform: translateY(-50%);
+            color: #888;
+            font-size: 18px;
+            background: none;
+            border: none;
+        }
+
+  
+        input {
+          height: 57px;
+          border-radius: 8px;
+          border: none;
+          background-color: #c9dde2;
+          caret-color: #5d5f7e;
+          padding: 0 13px;
+          &::placeholder {
+            color: rgba(93, 95, 126, 0.5);
+          }
+        }
+  
+        &-label {
+          color: #5d5f7e;
+          margin-bottom: 5px;
+          margin-left: 13px;
+        }
+      }
+    }
+}

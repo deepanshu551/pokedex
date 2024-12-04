@@ -1,0 +1,47 @@
+
+.button-container{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: #007bff; /* Blue color */
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .button:disabled {
+    background: #c0c0c0; /* Gray color for disabled state */
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  
+  .button:hover {
+    background: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px);
+  }
+  
+  .button:active {
+    background: #003f7f; /* Even darker blue when clicked */
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .button.previous {
+    margin-right: 10px; /* Add spacing between buttons */
+  }
+  
+  .button.next {
+    margin-left: 10px; /* Add spacing between buttons */
+  }
+  

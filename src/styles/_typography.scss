@@ -1,0 +1,50 @@
+.heading_bolder {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 35.16px;
+  letter-spacing: 0.06em;
+}
+
+.heading_bold {
+  font-size: 16px;
+  line-height: 18.75px;
+  font-weight: 500;
+  @media screen and (min-width: 720px) {
+    font-size: 20px;
+
+    line-height: 23.44px;
+  }
+}
+
+.heading_regular {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18.75px;
+}
+
+.heading_light {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16.41px;
+}
+
+.heading_bolder_small {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16.41px;
+}
+
+.heading_semi_bold_capitalize {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 23.44px;
+  text-transform: capitalize;
+}
+
+.heading_super_bold{
+font-size: 30px;
+font-weight: 800;
+line-height: 35.16px;
+letter-spacing: 0.06em;
+
+}
