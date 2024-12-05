@@ -89,6 +89,12 @@ export default function Tools() {
 
   useEffect(() => {
 
+    if (window.outerWidth > 720) {
+      setIsMobile(false);
+    } else {
+      setIsMobile(true);
+    }
+    
     window.addEventListener('resize',()=>{
       if (window.outerWidth > 720) {
         setIsMobile(false);
@@ -288,7 +294,7 @@ setLoading(false)
     try {
       const pokemonBasedOntype=await fetchPokemon("type");
       const pokemonBasedOnGender=await fetchPokemon("gender");
-      const pokemonBasedOnStat=await getPokemonsResponseStat(selectedStat.stat);
+      const pokemonBasedOnStat=await getPokemonsResponseStat(Object.keys(selectedStat.stat || {}).length === 0 ? defaultValue :selectedStat.stat);
       const pokemonTypeNames = new Set(pokemonBasedOntype.map((pokemon) => pokemon.pokemonName));
 
 
