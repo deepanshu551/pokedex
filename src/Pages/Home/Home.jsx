@@ -17,7 +17,7 @@ export default function Home() {
   }, []);
 
   return (
-    <section  data-testid="poke-home" className="poke-home">
+    <section className="poke-home">
       <Heading />
       <ErrorBoundary>
         <Tools />

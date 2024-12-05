@@ -59,7 +59,7 @@ export default function Details() {
   useEffect(() => {
     async function fetchDescription() {
       try {
-        const res = await axios(
+        const res = await axios.get(
           `/pokemon-species/${selectedPokemon.pokemon.id}`
         );
         const groupedByLanguage = getFlavorTextString(
@@ -184,12 +184,12 @@ export default function Details() {
 
 
   const onNext = async () => {
-    const newPokemon = await axios(`pokemon/${selectedPokemon.pokemon.id + 1}`);
+    const newPokemon = await axios.get(`pokemon/${selectedPokemon.pokemon.id + 1}`);
     dispatch(selectPokemon(newPokemon.data));
   };
 
   const onPrev = async () => {
-    const newPokemon = await axios(`pokemon/${selectedPokemon.pokemon.id - 1}`);
+    const newPokemon = await axios.get(`pokemon/${selectedPokemon.pokemon.id - 1}`);
     dispatch(selectPokemon(newPokemon.data));
   };
 
@@ -282,7 +282,7 @@ export default function Details() {
           />
         </div>
         <div className="poke-details-title">
-          <div className="poke-details-name heading_super_bold">
+          <div data-testid="details-pokeName" className="poke-details-name heading_super_bold">
             {selectedPokemon.pokemon && selectedPokemon.pokemon.name}
           </div>
           <div className="poke-details-divider"></div>
@@ -302,7 +302,8 @@ export default function Details() {
               onClick={goToHome}
               icon={faCircleXmark}
             />
-            <FontAwesomeIcon
+           <FontAwesomeIcon
+           data-testid="right"
               className="poke-icon right"
               onClick={onNext}
               icon={faCircleArrowRight}

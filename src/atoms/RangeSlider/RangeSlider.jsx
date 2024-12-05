@@ -95,6 +95,7 @@ const RangeSlider = ({ sliderId, defaultValues, onRangeChange }) => {
         <div>
           <div className={`tooltip`} id={`slider-tooltip-1-${sliderId}`}></div>
           <input
+          data-testid={`slider-1-${sliderId}`}
             type="range"
             min="0"
             max="210"
@@ -111,6 +112,7 @@ const RangeSlider = ({ sliderId, defaultValues, onRangeChange }) => {
             min="0"
             max="210"
             value={sliderTwoValue}
+            data-testid={`slider-2-${sliderId}`}
             id={`slider-2-${sliderId}`}
             onChange={handleSlideTwo}
           />

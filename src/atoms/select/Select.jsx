@@ -52,10 +52,8 @@ export default function Select({ list, selectType }) {
     if (selectType !== "stat") {
       setSelectedOptions(list.map((option) => option.name));
     }
-
   }, [list, selectType]);
- 
- 
+
   useEffect(() => {
     setSelectedOptions(list.map((option) => option.name));
   }, [list]);
@@ -281,6 +279,7 @@ export default function Select({ list, selectType }) {
   return (
     <div className={`checkbox-container ${selectType == "stat" && "stat"}`}>
       <div
+      data-testid="checkbox"
         className={`checkbox-select ${open ? "opened" : "closed"}`}
         onClick={openDropDown}
       >
@@ -297,12 +296,11 @@ export default function Select({ list, selectType }) {
           <span>Select Stats</span>
           <FontAwesomeIcon onClick={closeModal} icon={faCircleXmark} />
         </div>
-        {loading && <Loading/>}
+        {loading && <Loading />}
         {list.map((option, index) => {
           if (selectType == "stat") {
             return (
               <div key={index} className="dropdown-option">
-                
                 <label>
                   {option.name.includes("-")
                     ? option.name.split("-").join(".")
@@ -323,20 +321,23 @@ export default function Select({ list, selectType }) {
                 <input
                   type="checkbox"
                   id={option.name}
+                  name={option.name}
                   value={option.name}
+                  aria-labelledby={option.name}
                   checked={selectedOptions.includes(option.name)}
                   onChange={handleChange}
+                  data-testId={`checkbox-${option.name}`}
                 />
-                <label htmlFor={option.name}>{option.name}</label>
+                <label  id={option.name}>{option.name}</label>
               </div>
             );
           }
         })}
         <div className="dropdown-buttons">
-          <button onClick={reset} className="reset">
+          <button data-testid="reset" onClick={reset} className="reset">
             reset
           </button>
-          <button onClick={save} className="save">
+          <button data-testid="save" onClick={save} className="save">
             save
           </button>
         </div>

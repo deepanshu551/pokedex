@@ -202,7 +202,7 @@ export default function Accordion({ list, selectType }) {
           <div className="accordion-head-types"  dangerouslySetInnerHTML={{ __html: selectOptionShow }}></div>
 
           <div className="accordion-head-icon">
-            <button onClick={handleOpenAccordion}>
+            <button data-testid="button-accordion" onClick={handleOpenAccordion}>
               {!openAccordion ? <FontAwesomeIcon icon={faCirclePlus} /> :<FontAwesomeIcon icon={faCircleMinus} /> }
             </button>
           </div>
@@ -232,6 +232,7 @@ export default function Accordion({ list, selectType }) {
                 <input
                   type="checkbox"
                   id={option.name}
+                  data-testid={`checkbox-${option.name}`}
                   value={option.name}
                   checked={selectedOptions.includes(option.name)}
                   onChange={handleChange}

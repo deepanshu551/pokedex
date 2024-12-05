@@ -56,10 +56,12 @@
 
   .open-dropdown {
     visibility: visible;
+    display: flex;
   }
 
   .close-dropdown {
     visibility: hidden;
+    display: none;
   }
 
   .dropdown-option {
