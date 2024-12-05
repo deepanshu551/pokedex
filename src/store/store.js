@@ -7,6 +7,9 @@ import pokemonGenderSlice from "./slices/pokemonGenderSlice";
 import genderListSlice from "./slices/genderSlice";
 import filteredPokemonSilde from "./slices/filteredPokemon";
 import pokemonStatSlice from "./slices/pokemonStat";
+import selectedTypesSlice from "./slices/selectedTypesSlice";
+import selectedGendersSlice from "./slices/selectedGendersSlice";
+import selectedStatSlice from "./slices/selectedStatSlice";
 
 const store = configureStore({
     reducer:{
@@ -17,7 +20,10 @@ const store = configureStore({
         selectedPokemon:selectedPokemonSlice,
         genderList:genderListSlice,
         filteredList:filteredPokemonSilde,
-        pokemons:pokemonStatSlice
+        pokemons:pokemonStatSlice,
+        selectedTypes:selectedTypesSlice,
+        selectedGenders:selectedGendersSlice,
+        selectedStat:selectedStatSlice
     }
 });
 

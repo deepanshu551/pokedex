@@ -35,6 +35,11 @@ const RangeSlider = ({ sliderId, defaultValues, onRangeChange }) => {
   };
 
   useEffect(() => {
+    setSliderOneValue(defaultValues ? defaultValues.min : 70);
+    setSliderTwoValue(defaultValues ? defaultValues.max : 150);
+  }, [defaultValues]);
+
+  useEffect(() => {
     fillColor();
     onRangeChange({ min: sliderOneValue, max: sliderTwoValue });
   }, [sliderOneValue, sliderTwoValue]);
@@ -50,7 +55,14 @@ const RangeSlider = ({ sliderId, defaultValues, onRangeChange }) => {
         tooltip.textContent = value;
   
         // Dynamically position tooltip above the thumb
-        const thumbWidth = 41; // Approximate width of the thumb
+        let thumbWidth;
+        if(window.outerWidth>720){
+          thumbWidth = 41; // Approximate width of the thumb
+
+        }
+        else{
+          thumbWidth = 20;
+        }
         const sliderWidth = slider.offsetWidth;
         const position =
           ((value - slider.min) / (slider.max - slider.min)) *
@@ -71,7 +83,7 @@ const RangeSlider = ({ sliderId, defaultValues, onRangeChange }) => {
     slider2.addEventListener("input", () => {
       addValue(slider2,tooltip2);
     });
-  }, [sliderId]);
+  }, [sliderId,sliderOneValue, sliderTwoValue]);
 
   return (
     <div className="wrapper">

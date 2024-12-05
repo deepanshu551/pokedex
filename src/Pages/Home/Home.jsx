@@ -13,7 +13,13 @@ export default function Home() {
   const dispatch=useDispatch();
     const {searchedPokemon} = useSelector(state => state);
     useEffect(()=>{
-      document.body.style.padding="43px 75px";
+      if(window.outerWidth>720){
+        document.body.style.padding="43px 75px";
+
+      }
+      else{
+        document.body.style.padding=" 63px 28px";
+      }
     },[])
 
  

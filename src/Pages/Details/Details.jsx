@@ -104,7 +104,7 @@ export default function Details() {
   useEffect(() => {
     const updateBodyPadding = () => {
       console.log("Current width:", window.outerWidth);
-      if (window.outerWidth > 1024) {
+      if (window.outerWidth > 720) {
         setIsMobile(false);
         document.body.style.paddingLeft = "368px";
         document.body.style.paddingRight = "368px";

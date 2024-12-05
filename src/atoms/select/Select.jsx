@@ -49,24 +49,20 @@ export default function Select({ list, selectType }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (selectType === "stat") {
-      setSliderValues(defaultValue);
-    } else {
+    if (selectType !== "stat") {
       setSelectedOptions(list.map((option) => option.name));
     }
+
   }, [list, selectType]);
+ 
+ 
   useEffect(() => {
     setSelectedOptions(list.map((option) => option.name));
   }, [list]);
 
   const reset = () => {
     if (selectType === "stat") {
-      setSliderValues((prev) => ({
-        ...Object.keys(prev).reduce((acc, key) => {
-          acc[key] = { ...defaultValue[key] };
-          return acc;
-        }, {}),
-      }));
+      setSliderValues(defaultValue);
     }
   };
 

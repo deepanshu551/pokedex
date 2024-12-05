@@ -1,57 +1,153 @@
 .poke-home {
-  
-    &-tools {
-      margin-top: 27px;
+  position: relative;
+
+  &-tools {
+    margin-top: 27px;
+    display: flex;
+    gap: 42px;
+    align-items: center;
+    justify-content: space-between;
+
+;
+    div {
+      width: 100%;
+      @media screen and (max-width:720px) {
+        width: auto;
+        
+      }
+      z-index: 200;
+    }
+
+    &-desktop {
       display: flex;
       gap: 42px;
-  
-     div{
-        width:100%;
-        z-index: 200;
-     }
 
-      &-mob{
+
+
+    }
+
+    &-mob {
+
+      width: 90% !important;
+      height: 900px;
+      top: 10px;
+      left: 0;
+      padding: 0 23px;
+      background-color: white;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+
+      &-head {
+        padding: 28px 0 9px 0;
         display: flex;
-        gap: 42px;
-        display: none;
-        @media screen and (min-width: 720px) {
-            display: flex;
-            
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #2E315626;
+
+        &-title {
+          font-size: 25px;
+          font-weight: 800;
+          line-height: 29.3px;
+          color: #2E3156;
+
+        }
+
+      }
+
+      &-content {
+        margin-top: 28px;
+
+        &-item {
+          margin-bottom: 20px;
         }
       }
-      &-input {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        button{
-            position: absolute;
-            top: 65%;
-            right: 23px;
-            transform: translateY(-50%);
-            color: #888;
-            font-size: 18px;
-            background: none;
-            border: none;
+
+      &-button {
+        width: auto !important;
+
+        button {
+          background: #2e3156;
+          border-radius: 8px;
+          width: 76px;
+          height: 57px;
+          margin-top: 24px;
         }
 
-  
-        input {
-          height: 57px;
+      }
+
+      &-footer {
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        justify-content: space-around;
+        box-shadow: 0px 4px 14px 0px #2E315666;
+
+        left: 0;
+        padding: 22px 18px 12px 18px;
+        right: 0;
+
+        .poke-home-mob-button {
+
+          padding: 11px 37px;
+          background: none;
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 16.41px;
+          border: 1px solid #2E3156;
           border-radius: 8px;
-          border: none;
-          background-color: #c9dde2;
-          caret-color: #5d5f7e;
-          padding: 0 13px;
-          &::placeholder {
-            color: rgba(93, 95, 126, 0.5);
+
+          &.reset {
+            color: #2E3156;
+          }
+
+          &.apply {
+            background-color: #2E3156;
+            color: #fff;
           }
         }
-  
-        &-label {
-          color: #5d5f7e;
-          margin-bottom: 5px;
-          margin-left: 13px;
-        }
+      }
+
+      &-icon {
+        color: #ffff;
+        font-size: 35px;
       }
     }
+
+    &-input {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      button {
+        position: absolute;
+        top: 65%;
+        right: 23px;
+        transform: translateY(-50%);
+        color: #888;
+        font-size: 18px;
+        background: none;
+        border: none;
+      }
+
+      input {
+        height: 57px;
+        border-radius: 8px;
+        border: none;
+        background-color: #c9dde2;
+        caret-color: #5d5f7e;
+        padding: 0 13px;
+
+        &::placeholder {
+          color: rgba(93, 95, 126, 0.5);
+        }
+      }
+
+      &-label {
+        color: #5d5f7e;
+        margin-bottom: 5px;
+        margin-left: 13px;
+      }
+    }
+  }
 }
