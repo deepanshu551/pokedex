@@ -14,6 +14,14 @@ export default function Home() {
     } else {
       document.body.style.padding = " 63px 28px";
     }
+
+    document.addEventListener("resize",()=>{
+      if (window.outerWidth > 720) {
+        document.body.style.padding = "43px 75px";
+      } else {
+        document.body.style.padding = " 63px 28px";
+      }
+    })
   }, []);
 
   return (
